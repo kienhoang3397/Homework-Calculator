@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="Calculator">
+
+        <div class="title1"><B>CALCULATOR</B></div>
+        <div class="number">
+            <input type="text" id="number1" placeholder="Nhập vào số đầu tiên">
+            <input type="text" id="number2" placeholder="Nhập vào số thứ hai">
+        </div>
+        <div class="calculators">
+            <button id="cong" onclick="phepcong()" style="background-color: rgb(216, 231, 231);"><b>+</b></button>
+            <button id="tru" onclick="pheptru()"  style="background-color:rgb(225, 202, 202)"><b>-</b></button>
+            <button id="nhan" onclick="phepnhan()" style="background-color:rgb(233, 203, 233)"><b>x</b></button>
+            <button id="chia" onclick="phepchia()" style="background-color:rgb(219, 219, 188)"><b>:</b></button>
+            <button id="chialayphandu" onclick="phepchialayphandu()" style="background-color:rgb(199, 225, 199)"><b>%</b></button>
+            <button id="nutxoa" onclick="nutxoa()">Clear</button>
+        </div>
+
+        <div class="results">
+            <div class="daubang"><b>=</b></div>
+            <div id="result"></div>
+        </div>
+    </div>
+
+</body>
+<script>
+    function phepcong() {
+        var a = Number(document.getElementById("number1").value);
+        var b = Number(document.getElementById("number2").value);
+        var c = a + b
+        document.getElementById("result").innerHTML = c
+        
+    }
+    function pheptru() {
+        var aa = Number(document.getElementById("number1").value);
+        var bb = Number(document.getElementById("number2").value);
+        var cc = aa - bb
+        document.getElementById("result").innerHTML = cc
+    }
+    function phepnhan() {
+        var a1 = Number(document.getElementById("number1").value);
+        var b1 = Number(document.getElementById("number2").value);
+        var c1 = a1 * b1
+        document.getElementById("result").innerHTML = c1
+    }
+    function phepchia() {
+        var a2 = Number(document.getElementById("number1").value);
+        var b2 = Number(document.getElementById("number2").value);
+        var c2 = a2 / b2
+        document.getElementById("result").innerHTML = c2
+    }
+    function phepchialayphandu() {
+        var a3 = Number(document.getElementById("number1").value);
+        var b3 = Number(document.getElementById("number2").value);
+        var c3 = a3 % b3
+        document.getElementById("result").innerHTML = c3
+    }
+    function nutxoa() {
+        document.getElementById("number1").value = " ";
+        document.getElementById("number2").value = " ";
+        document.getElementById("result").innerHTML = " ";
+        document.getElementById("number1").placeholder = "Nhập vào số đầu tiên";
+        document.getElementById("number2").placeholder = "Nhập vào số thứ hai";
+    }
+
+
+</script>
+
+</html>
